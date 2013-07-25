@@ -1,0 +1,39 @@
+body,
+h1,
+h2,
+h2 a,
+h2 a:visited,
+h3,
+h4,
+h5,
+h6,
+p,
+select,
+textarea {
+	color: #9c9c9c;
+	font-family: 'pragmatica-web', sans-serif;
+	font-size: 15px;
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+a,
+a:visited,
+a:hover {
+	color: #2181bd;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a img {
+	border: none;
+}
+body {
+	background: #f5f5f5;
+	width:980px;
+	margin:25px auto 0;
+}
+p.title { font-size:2em;margin-top:15px; }
