@@ -20,9 +20,7 @@
 		<div style="margin-left:25px;">
 			<p class="title">We are currently updating our site!</p>
 			<p>While you wait, connect with us on <a href="https://www.facebook.com/southbridgefellowship">facebook</a> or <a href="https://twitter.com/southbridgefc">twitter</a> &mdash; or watch the latest sermon.</p>
-			<div id="video" style="visibility:hidden;margin-top:25px;">
-				<iframe width="980" height="551" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-			</div>
+			<div id="video" style="margin-top:25px;height:551px;background:#000;text-align:center;font-size:2em;color:#fff;line-height:551px;">Loading...</div>
 
 			<div style="font-size:.8em;text-align:right;">
 				9311 Focal Point Suite 101 &mdash; Raleigh, NC 27617 &mdash; 919.789.9955
@@ -40,10 +38,12 @@
 			}
 			var lastestVideoId = video.id;
 
-			var base = 'http://player.vimeo.com/video/';
-			var options = '?byline=0&amp;color=ffffff'
-			$('#video > iframe').attr('src', base + lastestVideoId + options).css('visibility', 'inherit');
-		}
+      var base = 'http://player.vimeo.com/video/';
+      var options = '?byline=0&amp;color=ffffff';
+      var url = encodeURI(base + lastestVideoId + options);
+      var html = '<iframe src="' + url + '" width="980" height="551" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
+      $('#video').html(html);		
+    }
 		$(function() {
 			$.ajax({
 				url: 'http://vimeo.com/api/v2/southbridge/videos.json',
